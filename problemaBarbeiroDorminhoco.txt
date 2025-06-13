@@ -1,0 +1,27 @@
+Descrição do problema:
+
+O problema do Barbeiro Dorminhoco descreve uma barbearia com um barbeiro, uma cadeira de barbeiro e N cadeiras de espera. Se não há clientes, o barbeiro dorme. Quando um cliente chega:
+
+    Se o barbeiro estiver dormindo, ele o acorda.
+
+    Se o barbeiro estiver ocupado e houver cadeiras disponíveis, o cliente senta e espera.
+
+    Se todas as cadeiras estiverem ocupadas, o cliente vai embora.
+
+Seção Crítica e Pontos de Sincronização:
+
+    Seção crítica: acessar e modificar o número de clientes esperando e as cadeiras disponíveis.
+
+    Sincronização:
+
+        Mutex para proteger o contador de clientes.
+
+        Semáforos para controlar o sono do barbeiro e o acesso à cadeira de barbear.
+
+Tratamento com semáforos:
+
+    cliente: semáforo para contar clientes que precisam de corte.
+
+    barbeiro: semáforo para sinalizar que o barbeiro está pronto.
+
+    mutex: garante acesso exclusivo ao número de clientes esperando.
